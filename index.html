@@ -1,250 +1,199 @@
-* {
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гиперссылки</title>
 
-html {
-    scroll-behavior: smooth;
-}
+    <!-- Bootstrap для задания 4 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #000000;
-    background: #e9e4e4;
-}
+    <!-- Исходное оформление -->
+    <link rel="stylesheet" href="style.css">
+</head>
 
-/* HEADER */
-header {
-    width: 100%;
-    background-color: #e6dddd;
-}
+<body>
+<header id="header">
+    <div class="header-inner">
+        <div class="logo">
+            <span>LOGO</span>
+        </div>
 
-.header-inner {
-    width: 100%;
-    padding: 15px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
+        <div class="site-title">
+            задание 3
+        </div>
 
-.logo {
-    width: 80px;
-    height: 80px;
-    border: 2px solid #e2e9ee;
-    border-radius: 50%;
-    background-color: #6c97b8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
+        <nav>
+            <a href="#links">Меню 1</a>
+            <a href="#table">Таблица 2</a>
+            <a href="#form">Форма 3</a>
+        </nav>
+    </div>
+</header>
 
-.site-title {
-    font-size: 22px;
-    text-align: center;
-}
+<main class="content d-flex flex-column">
 
-/* МЕНЮ */
-nav {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
+    <section id="links" class="block p-3 p-md-4">
+        <h1>Список гиперссылок</h1>
 
-nav a {
-    color: #222;
-    text-decoration: none;
-}
+        <ol>
+            <li><a href="http://kubsu.ru/">Главная страница КубГУ</a></li>
+            <li><a href="https://kubsu.ru/">Главная страница КубГУ через HTTPS</a></li>
+            <li><a href="https://yandex.ru/images/search?text=фото" target="_blank">Ссылка на поиск изображений</a></li>
+            <li><a href="/about/">Сокращённая ссылка на внутреннюю страницу</a></li>
+            <li><a href="/">Ссылка на главную</a></li>
+            <li><a href="#links">Ссылка на фрагмент страницы</a></li>
+            <li><a href="https://kubsu.ru/?time=14%3A00">КубГУ с параметром time</a></li>
+            <li><a href="https://kubsu.ru/?id=123">КубГУ с параметром id</a></li>
+            <li><a href="about/about.html">Относительная ссылка</a></li>
+            <li><a href="about/about.html">Относительная ссылка на страницу в каталоге about</a></li>
+            <li><a href="../">Относительная ссылка на страницу уровнем выше</a></li>
+            <li><a href="../../">Относительная ссылка на страницу двумя уровнями выше</a></li>
+            <li><span><a href="about/about.html">Ссылка внутри span</a></span></li>
+            <li><a href="https://example.com/about.html#contacts">Ссылка на фрагмент стороннего сайта</a></li>
+            <li><a href="">Пустой href</a></li>
+            <li><a>Пустая ссылка</a></li>
+            <li><a href="https://kubsu.ru/" rel="nofollow">Ссылка, по которой запрещён переход поисковикам</a></li>
+            <li><a href="https://kubsu.ru/" title="сайт КубГУ">Ссылка с title</a></li>
+            <li><a href="web1.html" title="ссылка на web1.html">Ссылка на web1.html</a></li>
+            <li><a href="----">ХЗ</a></li>
+        </ol>
 
-nav a:hover {
-    text-decoration: underline;
-}
+        <div class="image-map">
+            <img src="https://img.magnific.com/free-photo/vertical-shot-trees-reflecting-water_181624-44054.jpg"
+                 usemap="#myMap" alt="Карта изображения">
+            <map name="myMap">
+                <area shape="rect" coords="0,0,150,100" href="about/about.html" alt="Прямоугольник">
+                <area shape="circle" coords="225,50,40" href="about/about.html" alt="Круг">
+            </map>
+        </div>
+    </section>
 
-/* ОСНОВНОЙ КОНТЕНТ */
-.content {
-    width: 100%;
-    margin: 20px 0;
-    padding: 0 20px;
-    gap: 20px;
-}
+    <section id="table" class="block p-3 p-md-4">
+        <h2>Таблица</h2>
 
-/* БЛОКИ */
-.block {
-    width: 100%;
-    background-color: #a299d3;
-    border: 1px solid #e3dee4;
-}
+        <div class="table-responsive">
+            <table class="table table-bordered mb-0">
+                <thead>
+                    <tr>
+                        <th colspan="4">Учебная таблица</th>
+                    </tr>
+                    <tr>
+                        <th>№</th>
+                        <th>Название</th>
+                        <th>Описание</th>
+                        <th>Ссылка</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>HTML</td>
+                        <td>Разметка веб-страницы</td>
+                        <td><a href="https://developer.mozilla.org/ru/docs/Web/HTML" target="_blank">Подробнее</a></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">2</td>
+                        <td>CSS</td>
+                        <td>Оформление страницы</td>
+                        <td><a href="https://developer.mozilla.org/ru/docs/Web/CSS" target="_blank">Подробнее</a></td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>Интерактивность</td>
+                        <td><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank">Подробнее</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Git</td>
+                        <td>Контроль версий</td>
+                        <td><a href="https://git-scm.com/" target="_blank">Подробнее</a></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td colspan="2">Веб-разработка</td>
+                        <td><a href="#header">Наверх</a></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Web UI</td>
+                        <td>Учебное задание</td>
+                        <td><a href="#form">К форме</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-.block h1,
-.block h2 {
-    margin-top: 0;
-    font-weight: normal;
-}
+    <section id="form" class="block p-3 p-md-4">
+        <h2>Форма</h2>
 
-.block ol {
-    margin: 0;
-    padding-left: 30px;
-}
+        <form action="/" method="POST">
+            <label>
+                ФИО:<br>
+                <input class="form-control" name="field-name-1" placeholder="поле ФИО">
+            </label>
 
-.block li {
-    margin: 7px 0;
-}
+            <label>
+                Номер:<br>
+                <input class="form-control" name="field-email" type="tel" placeholder="поле tel">
+            </label>
 
-a {
-    color: #173f5b;
-}
+            <label>
+                Дата:<br>
+                <input class="form-control" name="field-date" type="date">
+            </label>
 
-/* КАРТА ИЗОБРАЖЕНИЯ */
-.image-map {
-    max-width: 500px;
-    margin: 20px auto 0;
-}
+            <fieldset>
+                <legend>Радиокнопки:</legend>
+                <label class="inline">
+                    <input type="radio" checked name="radio-group-1" value="Значение1">
+                    мужской
+                </label>
+                <label class="inline">
+                    <input type="radio" name="radio-group-1" value="Значение2">
+                    женский
+                </label>
+            </fieldset>
 
-.image-map img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
+            <label>
+                Любимый язык программирования:<br>
+                <select class="form-select" name="field-name-4[]" multiple>
+                    <option value="Значение1" selected>Python</option>
+                    <option value="Значение2">JavaScript</option>
+                    <option value="Значение3">Java</option>
+                    <option value="Значение4">С++</option>
+                    <option value="Значение5">С#</option>
+                    <option value="Значение6">PHP</option>
+                    <option value="Значение7">Haskel</option>
+                    <option value="Значение8">Prolog</option>
+                    <option value="Значение9">Scala</option>
+                </select>
+            </label>
 
-/* ТАБЛИЦА */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-    font-size: 13px;
-}
+            <label>
+                Биография:<br>
+                <textarea class="form-control" name="field-name-2" placeholder="Введите вашу биографию"></textarea>
+            </label>
 
-th,
-td {
-    border: 1px solid #c7d4d4;
-    padding: 10px;
-    text-align: center;
-}
+            <label class="checkbox">
+                <input type="checkbox" checked name="check-1">
+                подтвердить
+            </label>
 
-th {
-    background-color: #d8e7f1;
-}
+            <input class="submit btn" type="submit" value="сохранить">
+        </form>
+    </section>
 
-tbody tr:nth-child(odd) {
-    background-color: #edf4f8;
-}
+</main>
 
-tbody tr:nth-child(even) {
-    background-color: #fff;
-}
+<footer>
+    <div class="footer-inner">
+        <p>Учебный сайт</p>
+        <p>© 2026 Все права защищены</p>
+    </div>
+</footer>
 
-/* ФОРМА */
-form {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-form input[type="text"],
-form input[type="tel"],
-form input[type="date"],
-form select,
-form textarea {
-    width: 100%;
-    margin-top: 4px;
-    padding: 8px;
-    font: inherit;
-    border: 1px solid #777;
-    border-radius: 2px;
-}
-
-form select {
-    min-height: 150px;
-}
-
-form textarea {
-    min-height: 100px;
-    resize: vertical;
-}
-
-fieldset {
-    border: 1px solid #777;
-    padding: 10px;
-}
-
-.inline {
-    margin-right: 20px;
-}
-
-.checkbox {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.submit {
-    width: 130px;
-    padding: 9px;
-    border: 1px solid #a1afb9;
-    background-color: #d8e7f1;
-    cursor: pointer;
-}
-
-/* FOOTER */
-footer {
-    width: 100%;
-    background-color: #c9d0d4;
-    border-top: 2px solid #d2d9df;
-}
-
-.footer-inner {
-    width: 100%;
-    padding: 30px 20px;
-    text-align: left;
-}
-
-/* ПЛАНШЕТ И КОМПЬЮТЕР */
-@media (min-width: 701px) {
-    .header-inner {
-        min-height: 125px;
-        padding: 15px 30px;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .logo {
-        width: 100px;
-        height: 100px;
-    }
-
-    .site-title {
-        margin-left: 25px;
-        font-size: 28px;
-    }
-
-    nav {
-        width: auto;
-        margin-left: auto;
-        flex-direction: row;
-        align-items: center;
-        gap: 25px;
-    }
-
-    .content {
-        max-width: 960px;
-        margin: 20px auto;
-        padding: 0 20px;
-    }
-
-    table {
-        font-size: 16px;
-    }
-
-    .footer-inner {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 30px 20px;
-        text-align: left;
-    }
-}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
