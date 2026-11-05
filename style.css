@@ -231,7 +231,12 @@ fieldset {
    ПОДВАЛ
 */
 
-footer .footer-inner {
+footer {
+    background-color: #c9d0d4;
+    width: 100%;
+    border-top: 2px solid #d2d9df;
+}
+.footer-inner {
     text-align: left !important;
 }
 
