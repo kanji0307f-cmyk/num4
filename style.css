@@ -1,3 +1,4 @@
+/* Общие настройки */
 * {
     box-sizing: border-box;
 }
@@ -13,7 +14,11 @@ body {
     background: #e9e4e4;
 }
 
-/* HEADER */
+
+/*
+   ШАПКА
+*/
+
 header {
     width: 100%;
     background-color: #e6dddd;
@@ -21,37 +26,44 @@ header {
 
 .header-inner {
     width: 100%;
-    padding: 15px 20px;
+    min-height: 125px;
+    margin: 0;
+    padding: 15px 30px;
+
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 15px;
 }
 
+/* Логотип */
 .logo {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border: 2px solid #e2e9ee;
     border-radius: 50%;
+
     background-color: #6c97b8;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     flex-shrink: 0;
 }
 
+
+/* Название сайта */
 .site-title {
-    font-size: 22px;
-    text-align: center;
+    margin-left: 25px;
+    font-size: 28px;
 }
 
-/* МЕНЮ */
+
+/* Меню */
 nav {
-    width: 100%;
+    margin-left: auto;
+
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    gap: 25px;
 }
 
 nav a {
@@ -63,17 +75,22 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* ОСНОВНОЙ КОНТЕНТ */
+
+/*
+   ОСНОВНОЙ КОНТЕНТ
+*/
 .content {
-    width: 100%;
-    margin: 20px 0;
+    max-width: 960px;
+    margin: 20px auto;
     padding: 0 20px;
-    gap: 20px;
 }
 
-/* БЛОКИ */
+
+/* Каждый основной блок */
 .block {
-    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+
     background-color: #a299d3;
     border: 1px solid #e3dee4;
 }
@@ -83,6 +100,11 @@ nav a:hover {
     margin-top: 0;
     font-weight: normal;
 }
+
+
+/*
+   СПИСОК ГИПЕРССЫЛОК
+*/
 
 .block ol {
     margin: 0;
@@ -97,7 +119,10 @@ a {
     color: #173f5b;
 }
 
-/* КАРТА ИЗОБРАЖЕНИЯ */
+/* Из примера div.html:
+   отдельный блок ограничен по ширине
+   и центрируется */
+
 .image-map {
     max-width: 500px;
     margin: 20px auto 0;
@@ -109,12 +134,15 @@ a {
     display: block;
 }
 
-/* ТАБЛИЦА */
+
+/*
+   ТАБЛИЦА
+*/
+
 table {
     width: 100%;
     border-collapse: collapse;
     background-color: #fff;
-    font-size: 13px;
 }
 
 th,
@@ -128,6 +156,7 @@ th {
     background-color: #d8e7f1;
 }
 
+/* Чётные и нечётные строки */
 tbody tr:nth-child(odd) {
     background-color: #edf4f8;
 }
@@ -136,11 +165,15 @@ tbody tr:nth-child(even) {
     background-color: #fff;
 }
 
-/* ФОРМА */
+
+/*
+   ФОРМА
+*/
+
 form {
-    width: 100%;
     max-width: 600px;
     margin: 0 auto;
+
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -186,65 +219,46 @@ fieldset {
 .submit {
     width: 130px;
     padding: 9px;
+
     border: 1px solid #a1afb9;
     background-color: #d8e7f1;
+
     cursor: pointer;
 }
 
-/* FOOTER */
-footer {
-    width: 100%;
-    background-color: #c9d0d4;
-    border-top: 2px solid #d2d9df;
+
+/*
+   ПОДВАЛ
+*/
+
+footer .footer-inner {
+    text-align: left !important;
 }
 
-.footer-inner {
-    width: 100%;
-    padding: 30px 20px;
-    text-align: left;
-}
+/*
+   АДАПТАЦИЯ
+*/
 
-/* ПЛАНШЕТ И КОМПЬЮТЕР */
-@media (min-width: 701px) {
+@media (max-width: 700px) {
+
     .header-inner {
-        min-height: 125px;
-        padding: 15px 30px;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .logo {
-        width: 100px;
-        height: 100px;
-    }
-
-    .site-title {
-        margin-left: 25px;
-        font-size: 28px;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 20px;
     }
 
     nav {
-        width: auto;
-        margin-left: auto;
-        flex-direction: row;
-        align-items: center;
-        gap: 25px;
+        width: 100%;
+        margin-left: 0;
+
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .content {
-        max-width: 960px;
-        margin: 20px auto;
-        padding: 0 20px;
+    .site-title {
+        font-size: 22px;
     }
-
     table {
-        font-size: 16px;
-    }
-
-    .footer-inner {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 30px 20px;
-        text-align: left;
+        font-size: 13px;
     }
 }
