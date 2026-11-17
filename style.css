@@ -238,6 +238,7 @@ footer {
 }
 .footer-inner {
     text-align: left !important;
+    margin-left: 0 !important;
 }
 
 /*
